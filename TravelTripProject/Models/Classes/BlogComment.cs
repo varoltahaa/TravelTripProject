@@ -9,5 +9,6 @@ namespace TravelTripProject.Models.Classes
     {
         public IEnumerable<Blog> ValueOne { get; set; }
         public IEnumerable<Comment> ValueTwo { get; set; }
+        public IEnumerable<Blog> ValueThree { get; set; }
     }
 }

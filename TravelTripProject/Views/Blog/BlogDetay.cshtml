@@ -62,29 +62,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </ul>
                 }
 
-                <div class="content-form">
-                    <h3>Bir Yorum Yapın</h3>
-                    <form>
-                        <input type="text" placeholder="Kullanıcı Adı" required />
-                        <input type="text" placeholder="E-Mail" required />
-                        <textarea placeholder="Yorum"></textarea>
-                        <input type="submit" value="Gönder" />
-                    </form>
-                </div>
+                @Html.Action("Comment", "Blog");
             </div>
 
             <div class="col-md-4 side-content">
                 <div class="recent">
-                    <h3>RECENT POSTS</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
+                    <h3>Son Bloglar</h3>
+                    @foreach (var y in Model.ValueThree)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@y.Id">@y.Title</a></li>
+                        </ul>
+                    }
+
                 </div>
                 <div class="comments">
-                    <h3>RECENT COMMENTS</h3>
+                    <h3>Son Yorumlar</h3>
                     <ul>
                         <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
                         <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
