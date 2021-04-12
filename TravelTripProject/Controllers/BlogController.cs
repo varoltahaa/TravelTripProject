@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TravelTripProject.Models.Classes;
+using PagedList.Mvc;
 
 namespace TravelTripProject.Controllers
 {
@@ -14,6 +15,7 @@ namespace TravelTripProject.Controllers
         BlogComment by = new BlogComment();
         public ActionResult Index()
         {
+            
             //var blogs = c.Blogs.ToList();
             by.ValueOne = c.Blogs.ToList();
             by.ValueThree = c.Blogs.Take(5).ToList();

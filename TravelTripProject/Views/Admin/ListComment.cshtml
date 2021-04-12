@@ -8,28 +8,44 @@
 <h2>Yorum Listesi</h2>
 <br />
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>KULLANICI</th>
-        <th>MAİL</th>
-        <th>YORUM</th>
-        <th>BLOG</th>
-        <th>SİL</th>
-        <th>GÜNCELLE</th>
-    </tr>
-    @foreach (var x in Model)
-    {
+<table id="tbl1" class="table table-bordered">
+    <thead>
         <tr>
-            <td>@x.Id</td>
-            <td>@x.UserName</td>
-            <td>@x.Mail</td>
-            <td>@x.Comments</td>
-            <td>@x.Blog.Title</td>
-            <td><a href="/Admin/DeleteComment/@x.Id" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Admin/GetComment/@x.Id" class="btn btn-warning">Güncelle</a></td>
+            <th>ID</th>
+            <th>KULLANICI</th>
+            <th>MAİL</th>
+            <th>YORUM</th>
+            <th>BLOG</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.UserName</td>
+                <td>@x.Mail</td>
+                <td>@x.Comments</td>
+                <td>@x.Blog.Title</td>
+                <td><a href="/Admin/DeleteComment/@x.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/GetComment/@x.Id" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').DataTable();
+</script>
 
